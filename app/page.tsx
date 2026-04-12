@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className="wrapper">
-      <ActionBar />
+      <ActionBar activeFile={activeFile} onFileClick={setActiveFile} />
       <div className="editor">
         <Explorer activeFile={activeFile} onFileClick={setActiveFile} />
         <div className="main-column">
