@@ -182,7 +182,7 @@ PRs must pass all checks before merge. See `.github/workflows/ci.yml` for detail
 ### Local Quality Checks (Before Pushing)
 
 ```bash
-npm run lint    # Check & auto-fix code style
+npm run lint    # Check code style
 npm test        # Run tests
 npm run build   # Verify build succeeds
 ```

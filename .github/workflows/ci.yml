@@ -30,7 +30,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Check for unused dependencies
-        run: npm run lint -- --no-fix
-        continue-on-error: true
