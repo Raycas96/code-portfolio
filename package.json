@@ -1,7 +1,27 @@
 {
-  "name": "cv",
-  "version": "0.1.0",
-  "private": true,
+  "name": "code-portfolio",
+  "version": "1.0.0",
+  "description": "A modern VS Code-inspired portfolio template built with Next.js and React",
+  "keywords": [
+    "portfolio",
+    "cv",
+    "vscode",
+    "next.js",
+    "react",
+    "typescript",
+    "tailwind",
+    "template"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/code-portfolio"
+  },
+  "homepage": "https://github.com/yourusername/code-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/code-portfolio/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
