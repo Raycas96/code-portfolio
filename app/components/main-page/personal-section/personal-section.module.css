@@ -1,0 +1,23 @@
+.kvList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--ds-space-2);
+}
+
+.kvList li {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--ds-space-3);
+}
+
+.kvLabel {
+  color: var(--ds-subtle);
+  font-size: 0.82rem;
+}
+
+.kvValue {
+  color: var(--ds-text);
+  font-size: 0.92rem;
+}

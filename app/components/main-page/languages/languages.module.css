@@ -1,0 +1,17 @@
+.chipList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-2);
+}
+
+.chip {
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-sm);
+  padding: 4px 10px;
+  color: var(--ds-text);
+  font-size: 0.85rem;
+  background: rgba(47, 129, 247, 0.08);
+}

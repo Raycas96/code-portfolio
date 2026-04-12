@@ -1,0 +1,101 @@
+@layer components {
+  .page-wrap {
+    @apply min-h-screen p-4 md:p-8;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1400px] overflow-hidden rounded-shell border bg-panel/90 shadow-2xl backdrop-blur;
+  }
+
+  .titlebar {
+    @apply flex h-11 items-center justify-between border-b px-3;
+  }
+
+  .window-dots {
+    @apply flex items-center gap-2;
+  }
+
+  .dot {
+    @apply h-3 w-3 rounded-full;
+  }
+
+  .dot-danger {
+    @apply bg-danger;
+  }
+
+  .dot-warning {
+    @apply bg-warning;
+  }
+
+  .dot-success {
+    @apply bg-success;
+  }
+
+  .shell-body {
+    @apply flex;
+  }
+
+  .activitybar {
+    @apply hidden w-14 flex-col items-center gap-3 border-r bg-sidebar py-3 md:flex;
+  }
+
+  .activity-item {
+    @apply h-6 w-6 rounded bg-white/10;
+  }
+
+  .activity-item-active {
+    @apply bg-accent/30;
+  }
+
+  .activity-item-bottom {
+    @apply mt-auto;
+  }
+
+  .explorer {
+    @apply hidden w-72 border-r bg-sidebar p-3 lg:block;
+  }
+
+  .explorer-title {
+    @apply mb-3 text-xs uppercase tracking-wide text-muted;
+  }
+
+  .explorer-list {
+    @apply space-y-2 text-sm text-muted;
+  }
+
+  .editor-area {
+    @apply min-h-[560px] flex-1 bg-editor;
+  }
+
+  .tabs {
+    @apply flex border-b bg-panel/40;
+  }
+
+  .tab {
+    @apply border-r px-4 py-2 text-sm text-muted;
+  }
+
+  .tab-active {
+    @apply bg-editor text-text;
+  }
+
+  .editor-content {
+    @apply py-4;
+  }
+
+  .line {
+    @apply grid grid-cols-[40px_1fr] gap-3 px-4 py-0.5 font-mono text-sm;
+  }
+
+  .line-no {
+    @apply select-none text-right text-muted/60;
+  }
+
+  .line-text {
+    @apply text-text/90;
+  }
+
+  .statusbar {
+    @apply flex h-8 items-center justify-between border-t bg-accent/20 px-3 text-xs text-muted;
+  }
+}

@@ -1,0 +1,16 @@
+@layer base {
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body {
+    color: var(--ds-text);
+    font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+    background: radial-gradient(1200px 700px at 10% 0%, #1a2230 0%, #0f141b 52%, #090d13 100%);
+  }
+
+  * {
+    border-color: var(--ds-border);
+  }
+}

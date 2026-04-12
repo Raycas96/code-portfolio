@@ -1,0 +1,21 @@
+.section {
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-tab);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  padding: var(--ds-space-3) var(--ds-space-4);
+  color: var(--ds-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.body {
+  padding: var(--ds-space-4);
+}

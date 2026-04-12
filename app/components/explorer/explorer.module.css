@@ -1,0 +1,36 @@
+.explorer {
+  height: 100%;
+  border-right: 1px solid var(--ds-border);
+  background: linear-gradient(180deg, rgba(22, 28, 37, 0.85), rgba(17, 22, 30, 0.95));
+  padding: var(--ds-space-4);
+}
+
+.title {
+  margin: 0 0 var(--ds-space-3);
+  color: var(--ds-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--ds-space-2);
+}
+
+.item {
+  color: var(--ds-muted);
+  font-size: 0.9rem;
+}
+.item:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--ds-text);
+  background-color: var(--ds-accent-bg);
+}

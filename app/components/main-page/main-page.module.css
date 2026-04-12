@@ -1,0 +1,33 @@
+.main {
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+  background: var(--ds-editor);
+  padding: var(--ds-space-4) var(--ds-space-5);
+}
+
+.heading {
+  margin: 0 0 var(--ds-space-4);
+  color: var(--ds-text);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.summary {
+  margin: var(--ds-space-3) 0 0;
+  max-width: 68ch;
+  color: var(--ds-muted);
+  line-height: 1.6;
+}
+
+.sections {
+  display: grid;
+  gap: var(--ds-space-4);
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-space-1);
+}

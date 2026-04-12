@@ -1,0 +1,22 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--ds-panel) 88%, transparent);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
+  display: grid;
+  grid-template-columns: 15% 1fr;
+}
+
+.main-column {
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  min-height: 0;
+}
