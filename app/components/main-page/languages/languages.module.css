@@ -15,3 +15,11 @@
   font-size: 0.85rem;
   background: rgba(47, 129, 247, 0.08);
 }
+
+@media (max-width: 768px) {
+  .chip {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+}

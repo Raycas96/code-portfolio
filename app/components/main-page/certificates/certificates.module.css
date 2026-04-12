@@ -14,9 +14,17 @@
 .name {
   color: var(--ds-text);
   font-size: 0.92rem;
+  overflow-wrap: anywhere;
 }
 
 .description {
   color: var(--ds-muted);
   font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 0.9rem;
+  }
 }

@@ -8,7 +8,7 @@
 
 .kvList li {
   display: grid;
-  grid-template-columns: 112px 1fr;
+  grid-template-columns: minmax(88px, 112px) minmax(0, 1fr);
   gap: var(--ds-space-3);
 }
 
@@ -20,4 +20,21 @@
 .kvValue {
   color: var(--ds-text);
   font-size: 0.92rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .kvList li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .kvLabel {
+    font-size: 0.78rem;
+  }
+
+  .kvValue {
+    font-size: 0.95rem;
+  }
 }

@@ -29,5 +29,32 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--ds-space-1);
+  margin-bottom: var(--ds-space-1);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    padding: var(--ds-space-4);
+  }
+
+  .heading {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding: var(--ds-space-3);
+  }
+
+  .sections {
+    gap: var(--ds-space-3);
+  }
+
+  .summary {
+    margin-top: var(--ds-space-2);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
 }

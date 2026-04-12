@@ -14,4 +14,15 @@
   margin: var(--ds-space-1) 0 0;
   color: var(--ds-muted);
   font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .stack {
+    gap: var(--ds-space-2);
+  }
+
+  .cardTitle {
+    font-size: 0.9rem;
+  }
 }
