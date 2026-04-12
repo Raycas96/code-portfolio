@@ -83,7 +83,7 @@ lint-staged behavior:
 
 Pull request gate (GitHub Actions `.github/workflows/ci.yml`):
 
-- Runs on all PRs targeting main/master
+- Runs on all PRs targeting `main`
 - Executes: ESLint, tests, build verification
 - Must pass before merge
 - Branch protection rules can require status checks
