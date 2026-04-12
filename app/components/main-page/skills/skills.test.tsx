@@ -65,9 +65,18 @@ describe("Skills", () => {
     });
   });
 
-  it("should have key prop for each item (rendered without error)", () => {
-    // React will warn if keys are missing during rendering
-    const { container } = render(<Skills />);
-    expect(container.querySelectorAll("li").length).toBe(7);
+  it("should have key prop for each item (rendered without warning)", () => {
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    try {
+      const { container } = render(<Skills />);
+      expect(container.querySelectorAll("li").length).toBe(7);
+      expect(errorSpy).not.toHaveBeenCalled();
+      expect(warnSpy).not.toHaveBeenCalled();
+    } finally {
+      errorSpy.mockRestore();
+      warnSpy.mockRestore();
+    }
   });
 });
