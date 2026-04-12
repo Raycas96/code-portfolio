@@ -73,7 +73,7 @@ describe("PersonalSection", () => {
     const { container } = render(<PersonalSection />);
 
     const list = container.querySelector("ul");
-    expect(list).toBeDefined();
+    expect(list).not.toBeNull();
 
     const listItems = container.querySelectorAll("li");
     expect(listItems.length).toBe(6);
