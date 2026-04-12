@@ -1,8 +1,8 @@
-export interface Language {
+interface Language {
   name: string;
   proficiency: string;
 }
-export interface Experience {
+interface Experience {
   id: string;
   role: string;
   company: string;
@@ -11,7 +11,7 @@ export interface Experience {
   highlights: string[];
 }
 
-export interface Education {
+interface Education {
   id: string;
   title: string;
   school: string;
@@ -19,10 +19,16 @@ export interface Education {
   period: string;
 }
 
-export interface Certificate {
+interface Certificate {
   name: string;
   description?: string;
   certificateId?: string;
+}
+
+interface Project {
+  name: string;
+  description: string;
+  link?: string;
 }
 
 export interface CvProfile {
@@ -39,8 +45,9 @@ export interface CvProfile {
     summary: string;
   };
   experiences: Experience[];
-  education: Education[];
-  certificates: Certificate[];
-  languages: Language[];
-  skills: string[];
+  education?: Education[];
+  certificates?: Certificate[];
+  languages?: Language[];
+  skills?: string[];
+  projects?: Project[];
 }

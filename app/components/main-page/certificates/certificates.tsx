@@ -4,7 +4,7 @@ import styles from "./certificates.module.css";
 export const Certificates = () => {
   return (
     <ul className={styles.simpleList}>
-      {UserInfo.certificates.map((certificate) => (
+      {UserInfo.certificates?.map((certificate) => (
         <li key={certificate.certificateId ?? certificate.name}>
           <span className={styles.name}>{certificate.name}</span>
           {certificate.description ? (

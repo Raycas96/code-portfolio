@@ -4,7 +4,7 @@ import styles from "./education.module.css";
 export const Education = () => {
   return (
     <div className={styles.stack}>
-      {UserInfo.education.map((education) => (
+      {UserInfo.education?.map((education) => (
         <article key={education.id}>
           <p className={styles.cardTitle}>{education.title}</p>
           <p className={styles.cardMeta}>
