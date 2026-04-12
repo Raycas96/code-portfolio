@@ -15,7 +15,6 @@
 
 .summary {
   margin: var(--ds-space-3) 0 0;
-  max-width: 68ch;
   color: var(--ds-muted);
   line-height: 1.6;
 }

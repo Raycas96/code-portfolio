@@ -1,4 +1,5 @@
-import { CvFileName, sections } from "@/app/contants";
+import type { CvFileName } from "@/app/contants";
+import { sections } from "@/app/contants";
 import styles from "./action-bar.module.css";
 import UserInfo from "@/config/user";
 

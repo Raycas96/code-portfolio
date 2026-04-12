@@ -84,7 +84,12 @@ const parseProfileOverride = (): ProfileOverride | undefined => {
   }
 
   try {
-    return JSON.parse(rawOverride) as ProfileOverride;
+    const normalizedOverride = rawOverride
+      .trim()
+      .replace(/^['"]|['"]$/g, "")
+      .replace(/\\'/g, "'");
+
+    return JSON.parse(normalizedOverride) as ProfileOverride;
   } catch {
     return undefined;
   }

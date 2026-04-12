@@ -17,15 +17,26 @@ export const PersonalSection = () => {
       </li>
       <li>
         <span className={styles.kvLabel}>Email</span>
-        <span className={styles.kvValue}>{UserInfo.personal.email}</span>
+        <a className="link-inline" href={`mailto:${UserInfo.personal.email}`}>
+          {UserInfo.personal.email}
+        </a>
       </li>
       <li>
         <span className={styles.kvLabel}>Phone</span>
-        <span className={styles.kvValue}>{UserInfo.personal.phone}</span>
+        <a className="link-inline" href={`tel:${UserInfo.personal.phone.replace(/\s+/g, "")}`}>
+          {UserInfo.personal.phone}
+        </a>
       </li>
       <li>
         <span className={styles.kvLabel}>LinkedIn</span>
-        <span className={styles.kvValue}>{UserInfo.personal.linkedin}</span>
+        <a
+          className="link-inline"
+          href={UserInfo.personal.linkedin}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {UserInfo.personal.linkedin}
+        </a>
       </li>
     </ul>
   );

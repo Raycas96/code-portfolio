@@ -3,6 +3,32 @@
     text-wrap: pretty;
   }
 
+  .link-inline {
+    display: inline;
+    color: var(--ds-text);
+    font: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    text-decoration-color: transparent;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    transition:
+      color 120ms ease,
+      text-decoration-color 120ms ease;
+  }
+
+  .link-inline:hover {
+    color: var(--ds-accent);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+  }
+
+  .link-inline:focus-visible {
+    outline: 2px solid var(--ds-accent);
+    outline-offset: 2px;
+  }
+
   .panel-border {
     @apply border border-border;
   }
