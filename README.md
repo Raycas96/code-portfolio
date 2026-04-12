@@ -26,13 +26,16 @@ npm install
 
 ### Configure Your Info
 
-Edit `config/user.ts` with your name, title, links, and experience:
+Edit `config/user.ts` with your profile data (`cvName`, `personal`, and sections like experiences/skills):
 
 ```typescript
 export default {
+  cvName: "Your Name's CV",
   personal: {
     name: "Your Name",
-    title: "Full Stack Developer",
+    surname: "Your Surname",
+    fullName: "Your Name Your Surname",
+    role: "Full Stack Developer",
     email: "you@example.com",
     phone: "+1 (555) 123-4567",
   },
