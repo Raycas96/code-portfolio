@@ -123,30 +123,8 @@ Recommended for personal use:
 This template only produces `out/` when `NEXT_STATIC_EXPORT=true` is set. The example workflow enables that for you, so copy the example file instead of using it directly.
 
 1. Fork this repo as **private**
-2. In your private fork, copy `.github/workflows/deploy.yml.example` to `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-      - run: npm ci && npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-      - uses: actions/deploy-pages@v4
-```
-
+2. In your private fork, copy `.github/workflows/deploy.yml.example` to `.github/workflows/deploy.yml`
+3. Enable GitHub Pages in your repository settings and let the copied workflow handle the build and deploy
 3. In repository settings, set **GitHub Pages source** to "GitHub Actions"
 4. Push to `main` → auto-deploys to `https://yourusername.github.io/code-portfolio`
 
