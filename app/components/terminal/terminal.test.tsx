@@ -46,7 +46,7 @@ describe("Terminal", () => {
   it("should render cursor element", () => {
     const { container } = render(<Terminal />);
     const cursor = container.querySelector('[aria-hidden="true"]');
-    expect(cursor).toBeDefined();
+    expect(cursor).not.toBeNull();
   });
 
   it("should have proper structure with prompts and commands", () => {
