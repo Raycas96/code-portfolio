@@ -149,9 +149,9 @@ jobs:
 
 ### Other Platforms
 
-- **Vercel**: `npm run build` then deploy the `out/` folder
-- **Netlify**: Connect repo, set build command to `npm run build`, publish folder to `out`
-- **Static Host**: Run `npm run build`, upload `out/` folder
+- **Vercel**: Import the repository and let Vercel build/deploy the Next.js app directly (no `out/` folder unless you explicitly do a static export)
+- **Netlify**: Connect the repo and use the Next.js runtime, or for a purely static deploy build with `NEXT_STATIC_EXPORT=true npm run build` and publish `out`
+- **Static Host**: Run `NEXT_STATIC_EXPORT=true npm run build`, then upload the generated `out/` folder
 
 ## Contributing
 
