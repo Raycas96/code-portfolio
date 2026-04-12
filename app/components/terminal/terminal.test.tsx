@@ -50,8 +50,23 @@ describe("Terminal", () => {
   });
 
   it("should have proper structure with prompts and commands", () => {
-    const { container } = render(<Terminal />);
-    const lines = container.querySelectorAll("div");
-    expect(lines.length).toBeGreaterThan(0);
+    render(<Terminal />);
+    const terminal = screen.getByLabelText("Terminal");
+    const terminalContent = terminal.textContent ?? "";
+
+    expect(screen.getByText(/John@Doe cv %/)).toBeDefined();
+    expect(screen.getByText("npm run dev")).toBeDefined();
+    expect(screen.getByText(/status/)).toBeDefined();
+    expect(screen.getByText("ready")).toBeDefined();
+
+    const promptIndex = terminalContent.indexOf("John@Doe cv %");
+    const commandIndex = terminalContent.indexOf("npm run dev");
+    const statusIndex = terminalContent.indexOf("status");
+    const readyIndex = terminalContent.indexOf("ready");
+
+    expect(promptIndex).toBeGreaterThanOrEqual(0);
+    expect(commandIndex).toBeGreaterThan(promptIndex);
+    expect(statusIndex).toBeGreaterThan(commandIndex);
+    expect(readyIndex).toBeGreaterThan(statusIndex);
   });
 });
