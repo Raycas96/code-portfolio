@@ -1,4 +1,4 @@
-import { CvProfile } from "./types";
+import type { CvProfile } from "./types";
 
 const baseCvProfile: CvProfile = {
   cvName: "Your Name's CV",
@@ -52,4 +52,44 @@ const baseCvProfile: CvProfile = {
   skills: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Node.js"],
 };
 
-export default baseCvProfile;
+type ProfileOverride = Partial<CvProfile>;
+
+const isPlainObject = (value: unknown): value is Record<string, unknown> => {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+};
+
+const mergeProfile = <T>(baseValue: T, overrideValue: unknown): T => {
+  if (Array.isArray(baseValue)) {
+    return (Array.isArray(overrideValue) ? overrideValue : baseValue) as T;
+  }
+
+  if (isPlainObject(baseValue) && isPlainObject(overrideValue)) {
+    const mergedObject: Record<string, unknown> = { ...baseValue };
+
+    for (const [key, value] of Object.entries(overrideValue)) {
+      mergedObject[key] = key in baseValue ? mergeProfile(baseValue[key as keyof T], value) : value;
+    }
+
+    return mergedObject as T;
+  }
+
+  return (overrideValue ?? baseValue) as T;
+};
+
+const parseProfileOverride = (): ProfileOverride | undefined => {
+  const rawOverride = process.env.NEXT_PUBLIC_CV_PROFILE_JSON;
+
+  if (!rawOverride) {
+    return undefined;
+  }
+
+  try {
+    return JSON.parse(rawOverride) as ProfileOverride;
+  } catch {
+    return undefined;
+  }
+};
+
+const userInfo = mergeProfile(baseCvProfile, parseProfileOverride());
+
+export default userInfo;

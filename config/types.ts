@@ -1,9 +1,8 @@
-import { Languages } from "./../app/components/main-page/languages/languages";
-interface Languages {
+export interface Language {
   name: string;
   proficiency: string;
 }
-interface Experience {
+export interface Experience {
   id: string;
   role: string;
   company: string;
@@ -12,7 +11,7 @@ interface Experience {
   highlights: string[];
 }
 
-interface Education {
+export interface Education {
   id: string;
   title: string;
   school: string;
@@ -42,6 +41,6 @@ export interface CvProfile {
   experiences: Experience[];
   education: Education[];
   certificates: Certificate[];
-  languages: Languages[];
+  languages: Language[];
   skills: string[];
 }
