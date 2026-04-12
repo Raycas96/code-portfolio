@@ -117,8 +117,10 @@ This template is designed with privacy in mind:
 
 Recommended for personal use:
 
+This template only produces `out/` when `NEXT_STATIC_EXPORT=true` is set. The example workflow enables that for you, so copy the example file instead of using it directly.
+
 1. Fork this repo as **private**
-2. In your private fork, add `.github/workflows/deploy.yml`:
+2. In your private fork, copy `.github/workflows/deploy.yml.example` to `.github/workflows/deploy.yml`:
 
 ```yaml
 name: Deploy to GitHub Pages
