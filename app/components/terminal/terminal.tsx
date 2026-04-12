@@ -11,8 +11,12 @@ export const Terminal = () => {
         <span className={styles.command}> npm run dev</span>
       </div>
       <div>
-        <span className={styles.prompt}>status:</span>
+        <span className={styles.prompt}>{"> "}status:</span>
         <span className={styles.command}> ready</span>
+      </div>
+      <div className={styles.cursorLine}>
+        <span className={styles.prompt}>{"> "}</span>
+        <span className={styles.cursor} aria-hidden="true" />
       </div>
     </section>
   );
