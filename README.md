@@ -80,7 +80,7 @@ npm run dev
 npm test
 
 # Run tests in watch mode
-npm test:watch
+npm run test:watch
 
 # Lint & format
 npm run lint
