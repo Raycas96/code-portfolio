@@ -88,6 +88,19 @@ Do not bypass quality gates unless explicitly requested.
 - Prefer reusable components and data-driven rendering.
 - Ensure responsive behavior for desktop and mobile.
 
+## CSS Design System Rules
+
+- Keep global styles layered via app/globals.css imports only: tokens.css, base.css, components.css, utilities.css.
+- Store design tokens in app/styles/tokens.css and avoid hardcoding raw color values in components when a token exists.
+- Keep reset and typography defaults in app/styles/base.css only.
+- Put reusable UI shell classes (layout primitives and fake editor chrome) in app/styles/components.css.
+- Keep one-off helpers in app/styles/utilities.css and avoid component-specific logic there.
+- Prefer semantic utility usage (bg-panel, text-muted, border-border) over arbitrary values.
+- Maintain naming consistency for shell classes (shell, titlebar, explorer, editor-area, statusbar, tab).
+- If a style is reused 3+ times, promote it to a component class instead of repeating long Tailwind class strings.
+- Do not reintroduce legacy background/foreground root variables that conflict with tokenized design values.
+- Keep styles mobile-first and verify desktop/mobile behavior after CSS changes.
+
 ## Testing Rules
 
 - Add or update tests when behavior changes.
