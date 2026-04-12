@@ -1,7 +1,19 @@
 {
-  "name": "cv",
-  "version": "0.1.0",
+  "name": "code-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "A modern VS Code-inspired portfolio template built with Next.js and React",
+  "keywords": [
+    "portfolio",
+    "cv",
+    "vscode",
+    "next.js",
+    "react",
+    "typescript",
+    "tailwind",
+    "template"
+  ],
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,6 +34,7 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^20",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",

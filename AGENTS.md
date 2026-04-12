@@ -36,6 +36,9 @@ Heed deprecation notices.
 
 - app/: App Router entry files and global styles
 - public/: static assets
+- .github/: GitHub workflows and PR templates
+  - workflows/ci.yml: Automated quality gate (lint, test, build on PR)
+  - pull_request_template.md: Standard PR description format
 - .husky/: git hooks
 - lint-staged.config.mjs: staged-file quality gates
 - vitest.config.ts: test runner config
@@ -77,6 +80,13 @@ lint-staged behavior:
 - JS/TS files: eslint --fix, then prettier --write
 - d.ts and content files: prettier --write
 - Full test command: npm test
+
+Pull request gate (GitHub Actions `.github/workflows/ci.yml`):
+
+- Runs on all PRs targeting `main`
+- Executes: ESLint, tests, build verification
+- Must pass before merge
+- Branch protection rules can require status checks
 
 Do not bypass quality gates unless explicitly requested.
 
