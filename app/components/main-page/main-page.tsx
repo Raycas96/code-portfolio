@@ -56,7 +56,9 @@ export const MainPage = ({ selectedFile }: MainPageProps) => {
   return (
     <section className={styles.main} aria-label="Main content">
       <div className={styles.titleWrapper}>
-        <h1 className={styles.heading}>{UserInfo.cvName}</h1>
+        <h1 className={styles.heading}>
+          {UserInfo.personal.name} {UserInfo.personal.surname}
+        </h1>
         <p className={styles.summary}>{UserInfo.personal.summary}</p>
       </div>
       <div className={styles.sections}>
