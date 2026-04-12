@@ -25,6 +25,9 @@
   --ds-space-4: 16px;
   --ds-space-5: 20px;
   --ds-space-6: 24px;
+
+  --ds-list-indent: 18px;
+  --ds-list-indent-mobile: 16px;
 }
 
 @theme inline {
