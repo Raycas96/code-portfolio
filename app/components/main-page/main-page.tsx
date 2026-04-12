@@ -4,6 +4,7 @@ import UserInfo from "@/config/user";
 import { Section } from "./section";
 import { PersonalSection } from "./personal-section";
 import { Experiences } from "./experiences";
+import { Projects } from "./projects";
 import { Education } from "./education";
 import { Certificates } from "./certificates";
 import { Languages } from "./languages";
@@ -29,6 +30,11 @@ export const MainPage = ({ selectedFile }: MainPageProps) => {
     experiences: (
       <Section title="Experiences">
         <Experiences />
+      </Section>
+    ),
+    projects: (
+      <Section title="Projects">
+        <Projects />
       </Section>
     ),
     education: (

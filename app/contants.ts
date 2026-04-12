@@ -1,6 +1,7 @@
 export const SECTION_KEYS = [
   "personal",
   "experiences",
+  "projects",
   "education",
   "certificates",
   "languages",
@@ -12,9 +13,18 @@ export type SectionKey = (typeof SECTION_KEYS)[number];
 export const CV_FILES = [
   {
     fileName: "FULL_CV.md",
-    sections: ["personal", "experiences", "education", "certificates", "languages", "skills"],
+    sections: [
+      "personal",
+      "experiences",
+      "projects",
+      "education",
+      "certificates",
+      "languages",
+      "skills",
+    ],
   },
   { fileName: "EXPERIENCE.md", sections: ["experiences"] },
+  { fileName: "PROJECTS.md", sections: ["projects"] },
   { fileName: "EDUCATION.md", sections: ["education"] },
   { fileName: "CERTIFICATES.md", sections: ["certificates"] },
   { fileName: "SKILLS.md", sections: ["skills", "languages"] },
