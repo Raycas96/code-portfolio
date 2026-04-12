@@ -26,7 +26,7 @@ describe("Skills", () => {
   it("should render as unordered list", () => {
     const { container } = render(<Skills />);
     const list = container.querySelector("ul");
-    expect(list).toBeDefined();
+    expect(list).not.toBeNull();
   });
 
   it("should render all skills", () => {
