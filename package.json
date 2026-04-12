@@ -12,16 +12,7 @@
     "tailwind",
     "template"
   ],
-  "author": "Your Name",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/code-portfolio"
-  },
-  "homepage": "https://github.com/yourusername/code-portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/yourusername/code-portfolio/issues"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
