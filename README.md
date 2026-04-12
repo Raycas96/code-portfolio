@@ -125,8 +125,8 @@ This template only produces `out/` when `NEXT_STATIC_EXPORT=true` is set. The ex
 1. Fork this repo as **private**
 2. In your private fork, copy `.github/workflows/deploy.yml.example` to `.github/workflows/deploy.yml`
 3. Enable GitHub Pages in your repository settings and let the copied workflow handle the build and deploy
-3. In repository settings, set **GitHub Pages source** to "GitHub Actions"
-4. Push to `main` → auto-deploys to `https://yourusername.github.io/code-portfolio`
+4. In repository settings, set **GitHub Pages source** to "GitHub Actions"
+5. Push to `main` → auto-deploys to `https://yourusername.github.io/code-portfolio`
 
 ### Other Platforms
 
