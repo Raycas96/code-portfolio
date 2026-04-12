@@ -91,8 +91,17 @@ describe("Experiences", () => {
   });
 
   it("should have unique key for each experience (rendered without error)", () => {
-    // React will warn if keys are missing during rendering
-    const { container } = render(<Experiences />);
-    expect(container.querySelectorAll("article").length).toBe(2);
+    const consoleErrorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    const consoleWarnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    try {
+      const { container } = render(<Experiences />);
+      expect(container.querySelectorAll("article").length).toBe(2);
+      expect(consoleErrorSpy).not.toHaveBeenCalled();
+      expect(consoleWarnSpy).not.toHaveBeenCalled();
+    } finally {
+      consoleErrorSpy.mockRestore();
+      consoleWarnSpy.mockRestore();
+    }
   });
 });
