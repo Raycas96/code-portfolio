@@ -26,7 +26,7 @@ npm install
 
 ### Configure Your Info
 
-Edit `config/user.ts` with your profile data (`cvName`, `personal`, and sections like experiences/skills):
+Edit `config/user.ts` with your profile data (`cvName`, `personal`, and sections like experiences/skills). For private overrides, use `.env.local`, `NEXT_PUBLIC_CV_PROFILE_JSON`, and optionally `NEXT_PUBLIC_CV_URL` for an external CV PDF link.
 
 ```typescript
 export default {
@@ -56,6 +56,14 @@ Visit http://localhost:3000 to preview.
 ### Personal Data
 
 Store sensitive overrides locally using `.env.local` or a gitignored config file. See `config/user.ts` for the structure.
+
+For CV downloads, set:
+
+```bash
+NEXT_PUBLIC_CV_URL=https://your-cdn-or-storage.example.com/your-cv.pdf
+```
+
+If `NEXT_PUBLIC_CV_URL` is not set (and no `cvDownloadUrl` is provided in profile data), the app does not render a Download CV action.
 
 ### Styling
 

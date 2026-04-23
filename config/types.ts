@@ -33,6 +33,7 @@ interface Project {
 
 export interface CvProfile {
   cvName: string;
+  cvDownloadUrl: string;
   personal: {
     name: string;
     surname: string;

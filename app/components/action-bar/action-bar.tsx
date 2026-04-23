@@ -1,5 +1,6 @@
 import type { CvFileName } from "@/app/contants";
 import { sections } from "@/app/contants";
+import { DownloadCvButton } from "@/app/components/download-cv-button/download-cv-button";
 import styles from "./action-bar.module.css";
 import UserInfo from "@/config/user";
 
@@ -56,6 +57,8 @@ export const ActionBar = ({ activeFile, onFileClick }: ActionBarProps) => {
         <div className={styles.repoName} aria-label="repository name">
           {UserInfo.cvName}
         </div>
+
+        {UserInfo.cvDownloadUrl ? <DownloadCvButton variant="toolbar" /> : null}
       </div>
     </header>
   );

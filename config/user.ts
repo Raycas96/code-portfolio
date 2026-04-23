@@ -2,6 +2,7 @@ import type { CvProfile } from "./types";
 
 const baseCvProfile: CvProfile = {
   cvName: "Your Name's CV",
+  cvDownloadUrl: "",
   personal: {
     name: "Your Name",
     surname: "Your Surname",
@@ -102,6 +103,32 @@ const parseProfileOverride = (): ProfileOverride | undefined => {
   }
 };
 
-const userInfo = mergeProfile(baseCvProfile, parseProfileOverride());
+const resolveCvDownloadUrl = (url: string): string => {
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+
+  const normalizedUrl = url.startsWith("/") ? url : `/${url}`;
+  const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").trim();
+
+  if (!basePath) {
+    return normalizedUrl;
+  }
+
+  const normalizedBasePath = basePath.startsWith("/") ? basePath : `/${basePath}`;
+
+  if (normalizedUrl === normalizedBasePath || normalizedUrl.startsWith(`${normalizedBasePath}/`)) {
+    return normalizedUrl;
+  }
+
+  return `${normalizedBasePath}${normalizedUrl}`;
+};
+
+const mergedProfile = mergeProfile(baseCvProfile, parseProfileOverride());
+const envCvUrl = process.env.NEXT_PUBLIC_CV_URL?.trim();
+const userInfo: CvProfile = {
+  ...mergedProfile,
+  cvDownloadUrl: envCvUrl ? resolveCvDownloadUrl(envCvUrl) : mergedProfile.cvDownloadUrl.trim(),
+};
 
 export default userInfo;
