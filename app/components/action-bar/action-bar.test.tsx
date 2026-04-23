@@ -1,10 +1,23 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ActionBar } from "./action-bar";
 import { sections } from "@/app/contants";
 
+const mockedUserInfo = vi.hoisted(() => ({
+  cvName: "John Doe CV",
+  cvDownloadUrl: "https://example.com/cv.pdf",
+}));
+
+vi.mock("@/config/user", () => ({
+  default: mockedUserInfo,
+}));
+
 describe("ActionBar", () => {
+  beforeEach(() => {
+    mockedUserInfo.cvDownloadUrl = "https://example.com/cv.pdf";
+  });
+
   it("should render", () => {
     const mockOnFileClick = vi.fn();
     const { container } = render(
@@ -88,5 +101,22 @@ describe("ActionBar", () => {
 
     const header = screen.getByLabelText("window controls");
     expect(header.tagName).toBe("HEADER");
+  });
+
+  it("should render download cv link when cv url is configured", () => {
+    const mockOnFileClick = vi.fn();
+    render(<ActionBar activeFile={sections[0]} onFileClick={mockOnFileClick} />);
+
+    const downloadLink = screen.getByRole("link", { name: "Download CV PDF" });
+    expect(downloadLink).toHaveAttribute("href", "https://example.com/cv.pdf");
+  });
+
+  it("should not render download cv link when cv url is not configured", () => {
+    mockedUserInfo.cvDownloadUrl = "";
+    const mockOnFileClick = vi.fn();
+    render(<ActionBar activeFile={sections[0]} onFileClick={mockOnFileClick} />);
+
+    const downloadLink = screen.queryByRole("link", { name: "Download CV PDF" });
+    expect(downloadLink).not.toBeInTheDocument();
   });
 });

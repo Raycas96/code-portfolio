@@ -24,7 +24,15 @@
   word-break: break-word;
 }
 
-@media (max-width: 768px) {
+.desktopCvRow {
+  display: grid;
+}
+
+.mobileCvCta {
+  display: none;
+}
+
+@media (max-width: 1024px) {
   .kvList li {
     grid-template-columns: 1fr;
     gap: 2px;
@@ -36,5 +44,15 @@
 
   .kvValue {
     font-size: 0.95rem;
+  }
+
+  .kvList li.desktopCvRow {
+    display: none;
+  }
+
+  .mobileCvCta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--ds-space-4);
   }
 }
