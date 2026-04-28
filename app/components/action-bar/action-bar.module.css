@@ -94,6 +94,10 @@
   cursor: pointer;
 }
 
+.dotButton {
+  padding: 0;
+}
+
 .close {
   background: #ff5f57;
 }

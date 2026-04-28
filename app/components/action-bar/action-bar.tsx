@@ -7,8 +7,9 @@ import UserInfo from "@/config/user";
 interface ActionBarProps {
   activeFile: CvFileName;
   onFileClick: (file: CvFileName) => void;
+  onExitClick: () => void;
 }
-export const ActionBar = ({ activeFile, onFileClick }: ActionBarProps) => {
+export const ActionBar = ({ activeFile, onFileClick, onExitClick }: ActionBarProps) => {
   const handleNextFile = () => {
     const currentIndex = Object.values(sections).indexOf(activeFile);
     const nextIndex = (currentIndex + 1) % Object.values(sections).length;
@@ -25,7 +26,12 @@ export const ActionBar = ({ activeFile, onFileClick }: ActionBarProps) => {
   return (
     <header className={styles.wrapper} aria-label="window controls">
       <div className={styles.controls}>
-        <span className={`${styles.dot} ${styles.close}`} />
+        <button
+          type="button"
+          aria-label="Exit fake IDE"
+          className={`${styles.dot} ${styles.close} ${styles.dotButton}`}
+          onClick={onExitClick}
+        />
         <span className={`${styles.dot} ${styles.minimize}`} />
         <span className={`${styles.dot} ${styles.maximize}`} />
       </div>
