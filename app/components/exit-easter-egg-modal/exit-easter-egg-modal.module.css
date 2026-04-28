@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: color-mix(in srgb, black 58%, transparent);
+  backdrop-filter: blur(3px);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: min(480px, 94vw);
+  max-width: 560px;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--ds-border) 88%, var(--ds-accent));
+  border-radius: calc(var(--ds-radius-md) + 2px);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--ds-panel) 96%, black) 0%,
+    color-mix(in srgb, var(--ds-panel) 92%, black) 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.content {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.text {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ds-text);
+}
+
+.subtext {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ds-muted);
+}
+
+.progressTrack {
+  height: 4px;
+  width: 100%;
+  border-radius: 999px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--ds-border) 72%, transparent);
+}
+
+.progressBar {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ds-accent);
+  transform-origin: left center;
+  animation-name: easterEggCountdown;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes easterEggCountdown {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .card {
+    min-width: auto;
+    max-width: 92%;
+    align-items: center;
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 import { ActionBar } from "./components/action-bar/action-bar";
+import { ExitEasterEggModal } from "./components/exit-easter-egg-modal";
 import { Explorer } from "@/components/explorer";
 import { MainPage } from "@/components/main-page";
 import { Terminal } from "@/components/terminal";
@@ -30,19 +31,9 @@ export default function Home() {
     setShowExitEasterEgg(true);
   }, []);
 
-  useEffect(() => {
-    if (!showExitEasterEgg) {
-      return;
-    }
-
-    const timer = window.setTimeout(() => {
-      setShowExitEasterEgg(false);
-    }, 2500);
-
-    return () => {
-      window.clearTimeout(timer);
-    };
-  }, [showExitEasterEgg]);
+  const handleCloseExitEasterEgg = useCallback(() => {
+    setShowExitEasterEgg(false);
+  }, []);
 
   return (
     <main className="wrapper">
@@ -51,16 +42,7 @@ export default function Home() {
         onFileClick={setActiveFile}
         onExitClick={handleExitClick}
       />
-      {showExitEasterEgg ? (
-        <div className="easter-egg-overlay" role="alert" aria-live="assertive">
-          <div className="easter-egg-card">
-            <span className="easter-egg-emoji" aria-hidden="true">
-              🧙
-            </span>
-            <p className="easter-egg-text">You shall not pass!!</p>
-          </div>
-        </div>
-      ) : null}
+      <ExitEasterEggModal isOpen={showExitEasterEgg} onClose={handleCloseExitEasterEgg} />
       <div className="editor">
         <Explorer activeFile={activeFile} onFileClick={setActiveFile} />
         <div className="main-column">
