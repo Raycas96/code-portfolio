@@ -9,7 +9,7 @@ export const Projects = () => {
   return (
     <div className={styles.stack}>
       {UserInfo.projects.map((project) => (
-        <article key={project.name} className={styles.card}>
+        <article key={project.id} className={styles.card}>
           <p className={styles.cardTitle}>{project.name}</p>
           <ul className={styles.bulletList}>
             <p className={styles.cardMeta}>{project.description}</p>

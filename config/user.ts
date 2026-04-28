@@ -51,13 +51,7 @@ const baseCvProfile: CvProfile = {
     { name: "English", proficiency: "B2" },
   ],
   skills: ["Next.js", "TypeScript", "React", "Tailwind CSS", "Node.js"],
-  projects: [
-    {
-      name: "Personal Portfolio",
-      description: "A personal website showcasing my projects and skills.",
-      link: "https://your-portfolio.com",
-    },
-  ],
+  projects: [],
 };
 
 type ProfileOverride = Partial<CvProfile>;
