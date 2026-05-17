@@ -5,13 +5,10 @@
   "description": "A modern VS Code-inspired portfolio template built with Next.js and React",
   "keywords": [
     "portfolio",
+    "curriculum vitae",
     "cv",
     "vscode",
-    "next.js",
-    "react",
-    "typescript",
-    "tailwind",
-    "template"
+    "boilerplate"
   ],
   "license": "MIT",
   "scripts": {
