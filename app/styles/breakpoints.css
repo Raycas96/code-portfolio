@@ -1,0 +1,2 @@
+@custom-media --ds-compact (max-width: 1024px);
+@custom-media --ds-mobile (max-width: 768px);
