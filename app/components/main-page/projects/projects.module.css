@@ -32,7 +32,7 @@
   font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
+@media (--ds-mobile) {
   .stack {
     gap: var(--ds-space-2);
   }

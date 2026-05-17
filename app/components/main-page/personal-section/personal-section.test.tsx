@@ -71,7 +71,6 @@ describe("PersonalSection", () => {
     expect(screen.getByText("Email")).toBeDefined();
     expect(screen.getByText("Phone")).toBeDefined();
     expect(screen.getByText("LinkedIn")).toBeDefined();
-    expect(screen.getByText("CV")).toBeDefined();
   });
 
   it("should render as unordered list", () => {
@@ -81,7 +80,7 @@ describe("PersonalSection", () => {
     expect(list).not.toBeNull();
 
     const listItems = container.querySelectorAll("li");
-    expect(listItems.length).toBe(7);
+    expect(listItems.length).toBe(6);
   });
 
   it("should open LinkedIn link in new tab", () => {

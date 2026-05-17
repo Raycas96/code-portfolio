@@ -20,7 +20,7 @@
   padding: var(--ds-space-4);
 }
 
-@media (max-width: 768px) {
+@media (--ds-mobile) {
   .title {
     padding: var(--ds-space-2) var(--ds-space-3);
     font-size: 0.76rem;

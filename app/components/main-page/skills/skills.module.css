@@ -16,7 +16,7 @@
   background: rgba(47, 129, 247, 0.08);
 }
 
-@media (max-width: 768px) {
+@media (--ds-mobile) {
   .chip {
     width: 100%;
     padding: 6px 10px;

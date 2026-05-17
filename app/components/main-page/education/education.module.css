@@ -17,7 +17,7 @@
   overflow-wrap: anywhere;
 }
 
-@media (max-width: 768px) {
+@media (--ds-mobile) {
   .stack {
     gap: var(--ds-space-2);
   }

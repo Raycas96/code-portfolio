@@ -40,12 +40,6 @@ export const PersonalSection = () => {
             {UserInfo.personal.linkedin}
           </a>
         </li>
-        {UserInfo.cvDownloadUrl ? (
-          <li className={styles.desktopCvRow}>
-            <span className={styles.kvLabel}>CV</span>
-            <DownloadCvButton variant="inline" />
-          </li>
-        ) : null}
       </ul>
 
       {UserInfo.cvDownloadUrl ? (

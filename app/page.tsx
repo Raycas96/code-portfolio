@@ -6,6 +6,7 @@ import { MainPage } from "@/components/main-page";
 import { Terminal } from "@/components/terminal";
 import "./page.css";
 import { useCallback, useEffect, useState } from "react";
+import { mediaQueries } from "@/app/styles/breakpoints";
 import { sections } from "./contants";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
   const [showExitEasterEgg, setShowExitEasterEgg] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    const mediaQuery = window.matchMedia(mediaQueries.compact);
     const updateViewMode = () => setIsCompactView(mediaQuery.matches);
 
     updateViewMode();

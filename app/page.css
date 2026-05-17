@@ -22,7 +22,7 @@
   min-height: 0;
 }
 
-@media (max-width: 1024px) {
+@media (--ds-compact) {
   .wrapper > header,
   .editor > aside,
   .main-column > section:last-child {
